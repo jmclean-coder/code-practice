@@ -42,6 +42,8 @@ Ultimately the first two are the most important, and the third is a good thing t
 
 ## Time Complexity - How long code takes to run
 
+## BIG IDEA: As N grows, how does this reflect the runtime?
+
 <br>
 
 ### The Problem with Time as a Measurement to Compare Algorithms
@@ -78,7 +80,7 @@ Task:
 <br>
 
 
-      function addUpToo(n){
+    function addUpToo(n){
       return n * (n + 1) / 2;
     }
 
@@ -88,11 +90,11 @@ Task:
 <br>
 
     function addUpTo(n){
-    let total = 0
-    for (let i = 1; i <= n; i++){
-        total += i;
+      let total = 0
+      for (let i = 1; i <= n; i++){
+          total += i;
       }
-    return total
+      return total
     }
 
 - Numbe rof operationsis eventually bounded by a multiple of n: O(n)
@@ -100,15 +102,19 @@ Task:
 
 <br>
 
-      function countUpAndDown(n) {
+    function countUpAndDown(n) {
       console.log("Going Up!")
+
       for (var i; i < n; i++) {
           console.log(i)
       }
+
       console.log("At the top!\nGoing Down...")
+
       for (var j = n - 1; j >= 0; j--){
           console.log(j)
       }
+      
       console.log("At the Bottom, Bye!")
     }
 
@@ -117,7 +123,7 @@ Task:
 <br>
 
     function printAllPairs(n) {
-    for (var i = 0; i < n; i++){
+      for (var i = 0; i < n; i++){
         for (var j = 0; j < n; j++) {
             console.log( i, j)
         }
@@ -136,7 +142,52 @@ Task:
             1 0
             1 1
 
-KEY TAKEAWAY: As N grows, how does this reflect the runtime?
+
+<br>
+
+## Space Complexity
+
+## BIG IDEA: "How much additional memory do we need to allocate in order to run the code inside the algorithm?"
+
+A note on Aux Space Complexity:
+- As n grows the size of the input itself will grow, but that is assumed
+- We can use Big O to describe the algorithm space complexity too
+- We care more about the repercussions that the input the scaling has INSIDE the algorithm
+  
+Rules of Thumb:
+
+- Most primitives (Booleans, numbers, undefined, null) are constant space
+- Strings require O(n) space: 50 charactert string require 50 times the space as a single character
+- Reference types like arrays and objects take up O(n) space: an array of length 2 is twice the space than an array of length 1
+
+### Examples:
+
+      function sum(arr) {
+      let total = 0;
+      for (let i = 0; i < arr.length; i++) {
+        total += arr[i];
+      }
+      return total;
+    }
+
+- We have one number saved to a variable: total
+- We have another number saved to the variable: i
+- this is O(1) space, we have constant space, we are only making these new items once
+
+<br>
+
+    function double(arr) {
+        let newArr = []
+        for (let i = 0; i < array.length; i++) {
+            newArr.push(2 * arr[i])
+        }
+        return newArr
+    }
+
+- We have a new array that is saved to the variable Arr
+- However inside the loop the space that is taken up in memory is directly proportionate to the size of the inputs
+- this is O(n)
+
 
 <br>
 
@@ -177,4 +228,94 @@ KEY TAKEAWAY: As N grows, how does this reflect the runtime?
 2. Variable Assignmewnt is constant
 3. Accessing elements in an array(by index or object(by key) is constant
 4. In a loop, the complexity is the length of the loop \* the complexity of whatever happens in the loop
+
+<br>
+
+# Logarithms
+
+<br>
+
+The commmon complexities are O(n), O(1), and O(n^2)
+There are less common but still frequent algorithms that can be something like O(log n)
+
+## What's a log?
+
+A log is the INVERSE of exponentiation
+
+log₂(8) = 3
+
+"What power of two will equal 8? 
+2 * 2 * 2 = 8 
+
+2³ = 8
+
+- Binary: Log₂(n) = y
+
+- Base 10: log₁₀(n) = y
+
+- Log e: logₑ(n) = y
+
+We need to have a base for logarithms
+
+<br>
+
+## Logarithms in Big O
+
+<br>
+The binary logarithm of a number roughly measure the number of times you can divide that number by 2 <strong>before you get a value that's less than or equal to one.</strong>
+
+8 / 2 = 4
+  / 2 = 2
+  / 2 = 1
+
+count the divisions we get 3 so binary log(8) = 3
+
+25 / 2 = 12.5
+   / 2 = 6.25
+   / 2 = 3.125
+   / 2 = 1.5625
+   / 2 = 0.78125
+
+   An odd number doesn't cleanly divide with a binary log so we can see that binary log(25) is somewhere between 4 and 5 divisons
+
+   log(25) ≈ 4.64
+
+Note: In the case of Big O notation we drop the base and write log as a shorthand
+
+- log₂ === log
+
+Logarithmic time complexity is great!
+
+- O(log n) way better when compared to O(n) and slightly better than O(1)
+
+- O(n log n) is less favorable, but more favorable than o(n²)
+
+Where this applies:
+
+- Some searching algorithms have logarithmic time complexity
+- Efficient searching algorithms invole logarithms
+- Recursion sometimes involves logarithmic space coimplexity.
+
+Summary 
+- To analyze the performance of an algorithm, use Big O Notation
+- Big O Notation can give us a high level understanding of the time or space complexiity of an algorithm
+- Big O Notation doesn't care about precision, only the general trends (Linear, quadratic, constant)
+- The time or space complexity (measured with Big O) only depends on the algorithm not the machine that is running it
+- Big O Notation should practiced regularly
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
