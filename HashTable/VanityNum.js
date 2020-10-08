@@ -19,6 +19,14 @@
 9 : wxyz
 */
 
+
+//Process: Write a few test cases that I want to test againsts
+//Be aware of test cases I find as I go on, and add new ones as I find them.
+
+//Can you solve the problem?
+//Can you think about the problem in it's completeness
+
+//String manipulation: Hash Tables and Edge Case Gotchas
 //Push myself: look at how Hashes can be used
 
 const map = {
@@ -50,7 +58,7 @@ const map = {
   "Z": "9",
 };
 
-const codes = ["3", "TWLO", "CODE", "HTCH", "5"];
+const codes = ["3", "TWLO", "CODE", "BODE", "HTCH", "5"];
 
 const numbers = [
   "+17474824380",
@@ -59,8 +67,7 @@ const numbers = [
   "+15109926333",
   "+1415123456",
   "+14157088956",
-  "3333333333",
-  "333333333",
+  "+14157089567",
 ];
 
 // function buildStr(char){
@@ -93,15 +100,18 @@ function vanity(codes, numbers) {
   console.log(results)
 });
 
+//build a hashmap of number values that are possible for each vanity code
+//sort by number of fewest possible matches 
 
 for (const numCode of results){
-finalResult.push(numbers.find(number => number.includes(numCode)))
+  console.log(numCode)
+finalResult.push(numbers.filter(number => number.includes(numCode)))
 }
 
 console.log(finalResult)
 
 
-finalResult.sort()
+finalResult.sort( (a, b) => a.length - b.length)
 
 console.log(finalResult)
   //return sorted array of unique phone numbers that contain the substring
