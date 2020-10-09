@@ -14,7 +14,7 @@
 
 Unordered, key, value pairs
 
-WHat they are good for:
+What they are good for:
 
 - When order doesn't matter (unsorted)
 - When I need fast access, insertion, and removal of data
@@ -54,6 +54,54 @@ Built In Methods on Objects
 <br>
 
 ## Big O of Arrays
+
+Arrays are ordered lists
+
+    let names = ["Michael", "Melissa", "Joshua"]
+
+    let values = [true, {}, [], 2, "awesome"]
+
+What they are good for:
+
+- When I need order
+- When I need fast access
+  - Insertion and Removal depends on where we are doing it
+
+- Insertion 
+  - Adding to the end of an array is O(1)
+  - Adding to the beginning of an array is O(n) because we have to re-index every element in that array
+- Removal 
+  - Removing from the end is O(1)
+  - Removing from the end of an array is O(n) because we have to re-index every element in that array
+
+---
+
+Best to avoid adding or removing from the beginning or middle if I can, unless I absolutely need to enforce order/doing so has value
+
+- adding or removing to the beginnning of an empty array is constant time
+
+- Searching - O(n)
+- Access - O(1)
+
+## Built in Methods
+
+In Javascript: pop and push are always faster than shift and unshift.
+
+- push - O(1)
+- pop - O(1)
+- shift - O(n) 
+- unshift - O(n)
+
+- concat - O(n)
+  - technically O(n + m), but O(n) is fine.
+- slice - O(n)
+  - How many elements are we copying?
+- splice - O(n)
+  - Shifting and reindexing so O(n)
+- sort - O(n * log n)
+- Iterators like forEach/map/filter/reduce - O(n)
+
+
 
 
 
