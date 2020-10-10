@@ -9,3 +9,10 @@ let instructor = {
 /* Searching is O(n) when we are trying to find 
 out if a value is on the right side of the colon
 */
+
+// Big O of Arrays
+
+
+let names = ["Michael", "Melissa", "Joshua"]
+
+let values = [true, {}, [], 2, "awesome"]
