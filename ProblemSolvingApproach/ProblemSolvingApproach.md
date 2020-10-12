@@ -1,4 +1,4 @@
-# Problem Solving
+# Problem Solving Approach
 
 ## Objectives
 - Learn the steps and strategies to practicing problem solving skills
