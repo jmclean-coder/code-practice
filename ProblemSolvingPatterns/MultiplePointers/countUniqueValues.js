@@ -125,6 +125,63 @@ function countUniqueValuesWithMultiplePointersMutable(sortedArray){
 
 
 /* explanation:
+This only works if we are allowed to alter the array
+handled case of an empty array or array of one element only
+
+ i  
+[1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]
+    j
+
+while the fast pointe ris less than the array length
+if p1 doesn't equal p2,
+move p1 forward
+set p1 equal to p2
+move p2 forward
+
+
+    i  
+[1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]
+       j
+
+repeat
+
+       i  
+[1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]
+          j
+
+          i  
+[1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]
+             j
+
+
+          i  
+[1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]
+                j
+
+          i  
+[1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]
+                   j
+
+             i  
+[1, 2, 3, 4, 7, 4, 7, 12, 12, 13]
+                   j
+
+             i  
+[1, 2, 3, 4, 7, 4, 7, 12, 12, 13]
+                       j
+
+                i  
+[1, 2, 3, 4, 7, 12, 7, 12, 12, 13]
+                            j
+
+                     i  
+[1, 2, 3, 4, 7, 12, 13, 12, 12, 13]
+                                 j                           
+
+i = 6
++ 1 = 7
+
+7 unique values
 
 */
 
