@@ -24,7 +24,7 @@ maxSubarraySum([],4) // null
 
 //Naieve Solution
 // Time Complexity O(N^2)
-// this solution isn't great because if the array was big, say a million element and the number n were are comparing is 1000 or more,
+// this solution isn't great because if the array was big, say a million elements, and the number n were are comparing is 1000 or more....
 // the nested loop wouldn't be so good
 
 function maxSubArraySumNaieve(arr, num) {
@@ -34,10 +34,12 @@ function maxSubArraySumNaieve(arr, num) {
   }
   //account for negative numbers by starting here instead of 0
   var max = -Infinity;
+  
   //beware the off by one error here
-  // if the array length is 7 ans the numbe n is 2
-  // 7 - 2
-  // 5 + 1 = 6
+  // if the array length is 7 and the number n is 2
+  // 1. 7 - 2
+  // 2. 5 + 1 = 6
+
   // this restricts the loop to the last element of the array
   for (let i = 0; i < arr.length - num + 1; i++) {
     temp = 0;
@@ -78,7 +80,7 @@ function maxSubArraySumRefactored(arr, num){
 
     for(let i = num; i < arr.length; i++){
         //instead of recalculating everything, subtract the first number, then add the next number, sliding the summing window up one index
-        tempSum = tempSum - arr[i - num] + arr[i]
+        tempSum = tempSum- arr[i - num] + arr[i]
         //update maxSum by comparing the previous value of maxSum to the current value of tempSum if tempSUm is bigger, max sum updates
         maxSum = Math.max(maxSum, tempSum)    
     }
