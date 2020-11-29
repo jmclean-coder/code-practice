@@ -28,8 +28,7 @@ function areThereDuplicates(...args){
           next++
       }
       return false
-      
-  }
+}
 
 areThereDuplicates(1, 2, 3, 4, 4); // true
 areThereDuplicates("a", "b", "c", "d", "d"); // true
