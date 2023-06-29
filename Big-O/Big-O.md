@@ -19,7 +19,7 @@ For every algorithm there may be multiple different solutions and approaches. Bi
 
 ### Example: "Write a function that accepts a string input and returns a reversed copy"
 
-There are many ways to solve this with arrays, string manipulation, and/or JS methods
+There are many ways to solve this with arrays, string manipulation, and/or methods
 
 Things to note:
 
@@ -97,7 +97,7 @@ Task:
       return total
     }
 
-- Numbe rof operationsis eventually bounded by a multiple of n: O(n)
+- Number of operations is eventually bounded by a multiple of n: O(n)
   - as n grows, the runtime grows
 
 <br>
