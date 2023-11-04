@@ -1,7 +1,7 @@
 /*
 Frequency Counter
 
-This pattern uses objects or sets to collect values/frequencies of values. 
+This pattern uses objects or sets to collect values/frequencies of values.
 Usually o(n)
 
 Great for:
@@ -10,20 +10,20 @@ Comparing multiple pieces of data or inputs
 Contained in?
 Anagram of ?
 
-This can often avoid the need for nested loops or 
+This can often avoid the need for nested loops or
 o(n^₂) operations with arrays or strings.
 
 */
 
 //Example
 
-/* 
+/*
 Write a function called same, which accepts two arrays.
-The function should return true if every value in array1 
-has corresponding squares in array2. 
+The function should return true if every value in array1
+has corresponding squares in array2.
 The frequency of values must be the same
 
-Restate: Write a function that takes in two arrays and returns true if 
+Restate: Write a function that takes in two arrays and returns true if
 the second array has the same frequency of corresponding squares, and false otherwise.
 
 Inputs: Two arrays of numbers: arr1 & arr2
@@ -31,10 +31,6 @@ Outputs: True if arr2 has the same frequency of squares of arr1
 false if the frequency isnt the same
 false if not numbers
 false if not the squares
-
-
-
-
 */
 //my 1st implematation O(n)
 
@@ -104,7 +100,7 @@ function sameThree(arr1, arr2){
 
     for(let val of arr2){
         //if frequencyCounter2 value exists increment it OR set it to 0
-        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1        
+        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1
     }
     console.log(frequencyCounter1)
     console.log(frequencyCounter2)
@@ -142,7 +138,7 @@ function sameThree(arr1, arr2){
 //     ================
 
 //     if correctindex is -1, the value isn't present, making the compairson false
-    
+
 //     otherwise splice to remove values from arr2 to shrink it as we fid matches
 //     */
 //     for(let i = 0; i < arr1.length; i++){
@@ -171,6 +167,3 @@ function sameThree(arr1, arr2){
 console.log(sameThree([1, 2, 3], [4, 1, 9])); // true
 console.log(sameThree([1, 2, 3], [1, 9])); // false
 console.log(sameThree([1, 2, 1], [4, 4, 1])); // false
-
-
-
