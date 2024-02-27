@@ -7,7 +7,7 @@
 - Compare and Contrast the runtime for arrays and objects, as well as built in methods
 
 <br>
-  
+
 ## The Big O of Objects
 
 <br>
@@ -18,14 +18,13 @@ What they are good for:
 
 - When order doesn't matter (unsorted)
 - When I need fast access, insertion, and removal of data
-  
+
   - Insertion - O(1)
   - Deletion/Removal - O(1)
-  - Searching - O(n) linear time
+  - Searching - O(n)
   - Access - O(1)
 
-Searching is O(n) when we are trying to find 
-out if a <em>value</em> is on the right side of the colon by checking <em>each key property</em>
+Searching is O(n) when we are trying to find out if a <em>value</em> is present in the object by checking <em>each key property</em> and it's related value.
 
     let instructor = {
         firstName: "Joshua",
@@ -33,7 +32,7 @@ out if a <em>value</em> is on the right side of the colon by checking <em>each k
         favoriteNumbers: [1, 2, 3, 4]
     }
 
-We'd have to check each property to search for the true value if we didn't know the property name for retrieval
+We have to check each property to search for the true value if we didn't know the property name for retrieval
 
 ---
 
@@ -44,9 +43,9 @@ Built In Methods on Objects
 - Object.keys - O(n)
 - Object.values - O(n)
 - Object.entries - O(n)
-  -  As the number of items grows, we have have to visit each property to perform the operations above.
+  - As the number of items grows, we have have to visit each property to perform the operations above.
 
-- hasOwnProperty - O(1
+- hasOwnProperty - O(1)
   - Constant because we pass it a known key, returns true or false.
 
 ---
@@ -67,10 +66,10 @@ What they are good for:
 - When I need fast access
   - Insertion and Removal depends on where we are doing it
 
-- Insertion 
+- Insertion
   - Adding to the end of an array is O(1)
   - Adding to the beginning of an array is O(n) because we have to re-index every element in that array
-- Removal 
+- Removal
   - Removing from the end is O(1)
   - Removing from the end of an array is O(n) because we have to re-index every element in that array
 
@@ -89,7 +88,7 @@ In Javascript: pop and push are always faster than shift and unshift.
 
 - push - O(1)
 - pop - O(1)
-- shift - O(n) 
+- shift - O(n)
 - unshift - O(n)
 
 - concat - O(n)
@@ -100,8 +99,3 @@ In Javascript: pop and push are always faster than shift and unshift.
   - Shifting and reindexing so O(n)
 - sort - O(n * log n)
 - Iterators like forEach/map/filter/reduce - O(n)
-
-
-
-
-
