@@ -11,7 +11,6 @@ same([1, 2, 3], [4, 1, 9]) // true
 same([1, 2, 3], [1, 9]) // false
 same([1, 2, 1], [4, 4,1]) // false (must be same frequency)
 
-
 Naieve solution
 
 ```javascript
