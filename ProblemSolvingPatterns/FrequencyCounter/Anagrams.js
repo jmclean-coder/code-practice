@@ -1,11 +1,11 @@
 /*
 
-Given two strings, write a function to determine if the second string is an anagram 
-of the first. 
-An anagram is a word, phrase, or name formed by rearranging the letters of another, 
+Given two strings, write a function to determine if the second string is an anagram
+of the first.
+An anagram is a word, phrase, or name formed by rearranging the letters of another,
 such as cinema, formed from iceman.
 
-Restate: Write a function that compares two strings to see if they 
+Restate: Write a function that compares two strings to see if they
 contain the SAME frequency of the SAME characters, regardless of order
 
 
@@ -52,16 +52,15 @@ function validAnagramTwo(first, second) {
     if (first.length !== second.length) {
       return false;
     }
-  
+
     const lookup = {};
-  
+
     for (let i = 0; i < first.length; i++) {
       let letter = first[i];
       // if letter exists, increment, otherwise set to 1
       lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1;
     }
-    console.log(lookup)
-  
+
     for (let i = 0; i < second.length; i++) {
       let letter = second[i];
       // can't find letter or letter is zero then it's not an anagram
@@ -71,20 +70,20 @@ function validAnagramTwo(first, second) {
         lookup[letter] -= 1;
       }
     }
-  
+
     return true;
   }
-  // decrement count to zero as we encounter them in the string, 
+  // decrement count to zero as we encounter them in the string,
   // if we cencounter 0, it's falsy, returning false in lookup
   // {a: 0, n: 0, g: 0, r: 0, m: 0,s:1}
-validAnagram('anagrams', 'nagaramm')
+validAnagram('anagrams', 'nagaramm') // double m would make it zero, without double m, the s would make the words diff lengths
 
 
 console.log(validAnagram('', '')) // true
 console.log(validAnagram('aaz', 'zza')) // false
 console.log(validAnagram('anagram', 'nagaram')) // true
 console.log(validAnagram('anagrams', 'nagaramm')) // true
-console.log(validAnagram("rat","car")) // false 
+console.log(validAnagram("rat","car")) // false
 console.log(validAnagram('awesome', 'awesom')) // false
 console.log(validAnagram('qwerty', 'qeywrt')) // true
 console.log(validAnagram('texttwisttime', 'timetwisttext')) // true
